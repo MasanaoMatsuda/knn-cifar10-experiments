@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+*.pkl
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VSCode
+.vscode/
+
+# Docker
+*.env
+.env.*
+docker-compose.override.yml
+
+# データ・バイナリ・一時ファイル
+*.zip
+*.tar.gz
+*.h5
+*.npz
+*.csv
+.DS_Store
+
+# 課題
+*.pdf
+
+# __pycache__ and compiled files in subdirs
+**/__pycache__/
+**/*.pyc
