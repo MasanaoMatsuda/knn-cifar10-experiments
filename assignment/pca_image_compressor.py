@@ -16,6 +16,11 @@ class PCAImageCompressor:
         self.__fitted = True
         return p_components
     
+    def transform(self, dset: ImageDataset):
+        if self.__fitted:
+            return self.model.transform(dset.flat_images)
+        raise RuntimeError("モデルのフィッティングをしていません。fit_transform() を先に呼び出してください。")
+    
     def evaluate(self, dset: ImageDataset):
         return self.model.transform(dset.flat_images)
 

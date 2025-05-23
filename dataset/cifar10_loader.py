@@ -92,19 +92,3 @@ class CIFAR10Loader:
         train_X, eval_X, train_y, eval_y = train_test_split(
             train[0], train[1], test_size=eval_size, stratify=train[1], random_state=seed)
         return DatasetSplitTuple((train_X, train_y), (eval_X, eval_y), test)
-    
-
-    # def extract_class_subset(self, class_names: list) -> tuple[ImageDataset, ImageDataset]:
-    #     print(f"ラベル{class_names}が付与された画像データを抽出します。")
-    #     x_trains, y_trains = [], []
-    #     x_evals, y_evals = [], []
-    #     for name in class_names:
-    #         img_tr, label_tr = self.get_data_by_class_name(self.train, name)
-    #         img_eval, label_eval = self.get_data_by_class_name(self.eval, name)
-    #         x_trains.append(img_tr)
-    #         y_trains.append(label_tr)
-    #         x_evals.append(img_eval)
-    #         y_evals.append(label_eval)
-    #     train_set = ImageDataset(np.vstack(x_trains), np.hstack(y_trains), f"学習用{class_names}", True)
-    #     eval_set = ImageDataset(np.vstack(x_evals), np.hstack(y_evals), f"評価用{class_names}", True)
-    #     return train_set, eval_set

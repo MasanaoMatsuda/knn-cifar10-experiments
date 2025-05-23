@@ -30,3 +30,9 @@ class ModelScoreTracker:
         plt.title(f"k-NN Accuracy vs {exp_name}")
         plt.legend()
         plt.show()
+
+    def log_results(self):
+        for i in range(len(self.train_best_scores)):
+            ts = self.train_best_scores[i]
+            es = self.eval_accrs[i]
+            print(f"条件{self.conditions[i]} --> BestSetting({self.best_params[i]}) & Score(学習:{ts}, 検証:{es})")
